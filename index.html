@@ -25,12 +25,25 @@
       <span class="sr-only">Open menu</span>
     </button>
     <nav id="main-nav" aria-label="Main navigation">
-      <a href="#stay">Stay</a>
-      <a href="#experiences">Experiences</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#journey">Getting here</a>
+      <a href="#stay" data-i18n="navStay">Stay</a>
+      <a href="#experiences" data-i18n="navExperiences">Experiences</a>
+      <a href="#gallery" data-i18n="navGallery">Gallery</a>
+      <a href="#journey" data-i18n="navJourney">Getting here</a>
     </nav>
-    <button class="button button--light header-cta" type="button" data-open-booking>Plan your stay</button>
+    <label class="language-picker">
+      <span class="sr-only">Language</span>
+      <select id="language-select" aria-label="Language">
+        <option value="en">EN</option>
+        <option value="pt">PT</option>
+        <option value="fr">FR</option>
+        <option value="af">Afrikaans</option>
+        <option value="nl">Dutch / Nederlands</option>
+        <option value="da">Dansk / Denmark</option>
+        <option value="gd">Gàidhlig / Scotland</option>
+        <option value="zh">中文 / Mandarin</option>
+      </select>
+    </label>
+    <button class="button button--light header-cta" type="button" data-open-booking data-i18n="planStay">Plan your stay</button>
   </header>
 
   <main id="main">
@@ -38,18 +51,18 @@
       <div class="hero-media" role="img" aria-label="Villa Martins pool and guest rooms at sunset"></div>
       <div class="hero-shade"></div>
       <div class="hero-copy">
-        <p class="eyebrow">Inhaca Island · Mozambique</p>
-        <h1 id="hero-title">Trade the city<br>for island time.</h1>
-        <p class="hero-lede">Ten peaceful rooms, breakfast each morning and the Indian Ocean on your doorstep — only a 60-minute speedboat ride from Maputo.</p>
+        <p class="eyebrow" data-i18n="location">Inhaca Island · Mozambique</p>
+        <h1 id="hero-title" data-i18n-html="heroTitle">Trade the city<br>for island time.</h1>
+        <p class="hero-lede" data-i18n="heroLede">Ten peaceful rooms, breakfast each morning and the Indian Ocean on your doorstep — only a 60-minute speedboat ride from Maputo.</p>
         <div class="hero-actions">
-          <button class="button button--sun" type="button" data-open-booking>Check your dates</button>
-          <a class="text-link text-link--light" href="#story">Discover Villa Martins</a>
+          <button class="button button--sun" type="button" data-open-booking data-i18n="checkDates">Check your dates</button>
+          <a class="text-link text-link--light" href="#story" data-i18n="discover">Discover Villa Martins</a>
         </div>
       </div>
       <div class="hero-facts" aria-label="At a glance">
-        <span><strong>10</strong> guest rooms</span>
-        <span><strong>60 min</strong> from Maputo</span>
-        <span><strong>Daily</strong> breakfast included</span>
+        <span><strong>10</strong> <span data-i18n="guestRooms">guest rooms</span></span>
+        <span><strong>60 min</strong> <span data-i18n="fromMaputo">from Maputo</span></span>
+        <span><strong data-i18n="daily">Daily</strong> <span data-i18n="breakfastIncluded">breakfast included</span></span>
       </div>
       <a class="scroll-cue" href="#story" aria-label="Scroll to discover"><span></span></a>
     </section>
@@ -57,49 +70,49 @@
     <section class="intro section" id="story">
       <div class="section-number">01</div>
       <div class="intro-heading">
-        <p class="eyebrow eyebrow--dark">The island, at your pace</p>
-        <h2>A quieter kind of luxury.</h2>
+        <p class="eyebrow eyebrow--dark" data-i18n="storyEyebrow">The island, at your pace</p>
+        <h2 data-i18n="storyTitle">A quieter kind of luxury.</h2>
       </div>
       <div class="intro-copy">
-        <p class="lead">Here, luxury is the freedom to slow down: a warm welcome, a barefoot walk to the shore, and nowhere else you need to be.</p>
-        <p>Villa Martins was created as a comfortable, authentic island retreat. Spaces are relaxed and welcoming, with nature always close — from the palms and ocean breeze to the spectacular marine reserve nearby.</p>
+        <p class="lead" data-i18n="storyLead">Here, luxury is the freedom to slow down: a warm welcome, a barefoot walk to the shore, and nowhere else you need to be.</p>
+        <p data-i18n="storyBody">Villa Martins was created as a comfortable, authentic island retreat. Spaces are relaxed and welcoming, with nature always close — from the palms and ocean breeze to the spectacular marine reserve nearby.</p>
       </div>
       <figure class="intro-image reveal">
         <img src="assets/images/gallery-03.jpg" alt="Guests receiving a warm welcome at Villa Martins" loading="lazy">
-        <figcaption>Welcome to your island home</figcaption>
+        <figcaption data-i18n="welcomeHome">Welcome to your island home</figcaption>
       </figure>
     </section>
 
     <section class="stay section" id="stay">
       <div class="section-heading">
         <div>
-          <p class="eyebrow eyebrow--dark">Stay well</p>
-          <h2>Simple. Comfortable.<br>Made for switching off.</h2>
+          <p class="eyebrow eyebrow--dark" data-i18n="stayEyebrow">Stay well</p>
+          <h2 data-i18n-html="stayTitle">Simple. Comfortable.<br>Made for switching off.</h2>
         </div>
-        <p>Ten thoughtfully designed rooms open onto tropical gardens and the pool. Each stay includes daily breakfast, with a restaurant available for other meals.</p>
+        <p data-i18n="stayBody">Ten thoughtfully designed rooms open onto tropical gardens and the pool. Each stay includes daily breakfast, with a restaurant available for other meals.</p>
       </div>
       <div class="stay-grid">
         <article class="stay-card stay-card--large reveal">
           <img src="assets/images/gallery-06.jpg" alt="Villa Martins rooms and pool at sunset" loading="lazy">
           <div class="stay-card__copy">
-            <p class="card-kicker">The Villa</p>
-            <h3>Everything close, nothing rushed.</h3>
+            <p class="card-kicker" data-i18n="villaKicker">The Villa</p>
+            <h3 data-i18n="villaTitle">Everything close, nothing rushed.</h3>
             <ul>
-              <li>Pool & garden</li>
-              <li>Breakfast included</li>
-              <li>Restaurant on site</li>
+              <li data-i18n="poolGarden">Pool & garden</li>
+              <li data-i18n="breakfastIncluded">Breakfast included</li>
+              <li data-i18n="restaurant">Restaurant on site</li>
             </ul>
           </div>
         </article>
         <article class="stay-card reveal">
           <img src="assets/images/gallery-07.jpg" alt="Villa Martins poolside sun loungers" loading="lazy">
           <div class="stay-card__copy">
-            <p class="card-kicker">Poolside days</p>
-            <h3>Cool water, warm sun.</h3>
+            <p class="card-kicker" data-i18n="poolsideKicker">Poolside days</p>
+            <h3 data-i18n="poolsideTitle">Cool water, warm sun.</h3>
           </div>
         </article>
         <article class="stay-card stay-card--quote reveal">
-          <p>“A peaceful piece of paradise.”</p>
+          <p data-i18n="quote">“A peaceful piece of paradise.”</p>
           <span>Villa Martins, Inhaca</span>
         </article>
       </div>
@@ -108,30 +121,30 @@
     <section class="experiences" id="experiences">
       <div class="experiences-intro section">
         <div class="section-number">02</div>
-        <p class="eyebrow">Out on the island</p>
-        <h2>Follow the tide.</h2>
-        <p>Spend the day in clear water, discover quiet beaches or see the island from above. We can help shape the day around you.</p>
+        <p class="eyebrow" data-i18n="experiencesEyebrow">Out on the island</p>
+        <h2 data-i18n="experiencesTitle">Follow the tide.</h2>
+        <p data-i18n="experiencesBody">Spend the day in clear water, discover quiet beaches or see the island from above. We can help shape the day around you.</p>
       </div>
       <div class="experience-rail" role="list" aria-label="Experiences">
         <article class="experience-card" role="listitem">
           <img src="assets/images/activity-snorkel.jpg" alt="Snorkelling in the waters around Inhaca" loading="lazy">
-          <div><span>01</span><h3>Snorkelling</h3><p>Meet vibrant marine life in clear, warm water.</p></div>
+          <div><span>01</span><h3 data-i18n="snorkelling">Snorkelling</h3><p data-i18n="snorkellingBody">Meet vibrant marine life in clear, warm water.</p></div>
         </article>
         <article class="experience-card" role="listitem">
           <img src="assets/images/activity-beach.jpg" alt="Walking along the beach on Inhaca Island" loading="lazy">
-          <div><span>02</span><h3>Beach walks</h3><p>Barefoot strolls and quiet moments by the shore.</p></div>
+          <div><span>02</span><h3 data-i18n="beachWalks">Beach walks</h3><p data-i18n="beachWalksBody">Barefoot strolls and quiet moments by the shore.</p></div>
         </article>
         <article class="experience-card" role="listitem">
           <img src="assets/images/activity-lighthouse.jpg" alt="Historic lighthouse on Inhaca Island" loading="lazy">
-          <div><span>03</span><h3>Island tour</h3><p>Explore Inhaca and climb to the historic lighthouse.</p></div>
+          <div><span>03</span><h3 data-i18n="islandTour">Island tour</h3><p data-i18n="islandTourBody">Explore Inhaca and climb to the historic lighthouse.</p></div>
         </article>
         <article class="experience-card" role="listitem">
           <img src="assets/images/activity-fishing.jpg" alt="Fishing in the Indian Ocean" loading="lazy">
-          <div><span>04</span><h3>Ocean fishing</h3><p>Head offshore into the Indian Ocean's rich waters.</p></div>
+          <div><span>04</span><h3 data-i18n="fishing">Ocean fishing</h3><p data-i18n="fishingBody">Head offshore into the Indian Ocean's rich waters.</p></div>
         </article>
         <article class="experience-card" role="listitem">
           <img src="assets/images/activity-whale.jpg" alt="Whale watching off the coast" loading="lazy">
-          <div><span>05</span><h3>Whale watching</h3><p>Witness humpback migration in season.</p></div>
+          <div><span>05</span><h3 data-i18n="whales">Whale watching</h3><p data-i18n="whalesBody">Witness humpback migration in season.</p></div>
         </article>
       </div>
     </section>
@@ -139,41 +152,64 @@
     <section class="gallery section" id="gallery">
       <div class="section-heading section-heading--gallery">
         <div>
-          <p class="eyebrow eyebrow--dark">A glimpse of island life</p>
-          <h2>Wish you were here?</h2>
+          <p class="eyebrow eyebrow--dark" data-i18n="galleryEyebrow">A glimpse of island life</p>
+          <h2 data-i18n="galleryTitle">Wish you were here?</h2>
         </div>
-        <p>Slow mornings, blue water and golden-hour dinners. Tap any photograph for a closer look.</p>
+        <p data-i18n="galleryBody">Slow mornings, blue water and golden-hour dinners. Tap any photograph for a closer look.</p>
       </div>
       <div class="gallery-grid">
-        <button class="gallery-item gallery-item--wide" type="button" data-lightbox="assets/images/gallery-08.jpg" aria-label="Open photo of the pool and villa at sunset"><img src="assets/images/gallery-08.jpg" alt="Pool and villa at sunset" loading="lazy"></button>
-        <button class="gallery-item gallery-item--tall" type="button" data-lightbox="assets/images/gallery-11.jpg" aria-label="Open photo of pool water feature"><img src="assets/images/gallery-11.jpg" alt="Pool water feature" loading="lazy"></button>
-        <button class="gallery-item" type="button" data-lightbox="assets/images/gallery-01.jpg" aria-label="Open photo of the main villa"><img src="assets/images/gallery-01.jpg" alt="Main villa and garden" loading="lazy"></button>
-        <button class="gallery-item" type="button" data-lightbox="assets/images/gallery-05.jpg" aria-label="Open photo of the garden fire circle"><img src="assets/images/gallery-05.jpg" alt="Garden fire circle" loading="lazy"></button>
-        <button class="gallery-item gallery-item--wide" type="button" data-lightbox="assets/images/gallery-12.jpg" aria-label="Open photo of a guest diving into the pool"><img src="assets/images/gallery-12.jpg" alt="Guest diving into the pool" loading="lazy"></button>
+        <button class="gallery-item gallery-item--wide" type="button" data-lightbox="assets/images/gallery-08.jpg" aria-label="Open gallery photo 1"><img src="assets/images/gallery-08.jpg" alt="Villa Martins pool and rooms at sunset" loading="lazy"></button>
+        <button class="gallery-item gallery-item--tall" type="button" data-lightbox="assets/images/gallery-11.jpg" aria-label="Open gallery photo 2"><img src="assets/images/gallery-11.jpg" alt="Villa Martins pool water feature" loading="lazy"></button>
+        <button class="gallery-item" type="button" data-lightbox="assets/images/gallery-01.jpg" aria-label="Open gallery photo 3"><img src="assets/images/gallery-01.jpg" alt="Villa Martins main building and garden" loading="lazy"></button>
+        <button class="gallery-item" type="button" data-lightbox="assets/images/gallery-02.jpg" aria-label="Open gallery photo 4"><img src="assets/images/gallery-02.jpg" alt="Villa Martins team" loading="lazy"></button>
+        <button class="gallery-item gallery-item--wide" type="button" data-lightbox="assets/images/gallery-03.jpg" aria-label="Open gallery photo 5"><img src="assets/images/gallery-03.jpg" alt="Guests welcomed at Villa Martins" loading="lazy"></button>
+        <button class="gallery-item gallery-item--tall" type="button" data-lightbox="assets/images/gallery-04.jpg" aria-label="Open gallery photo 6"><img src="assets/images/gallery-04.jpg" alt="Villa Martins island atmosphere" loading="lazy"></button>
+        <button class="gallery-item" type="button" data-lightbox="assets/images/gallery-05.jpg" aria-label="Open gallery photo 7"><img src="assets/images/gallery-05.jpg" alt="Villa Martins garden fire circle" loading="lazy"></button>
+        <button class="gallery-item" type="button" data-lightbox="assets/images/gallery-06.jpg" aria-label="Open gallery photo 8"><img src="assets/images/gallery-06.jpg" alt="Villa Martins pool and guest rooms" loading="lazy"></button>
+        <button class="gallery-item gallery-item--wide" type="button" data-lightbox="assets/images/gallery-07.jpg" aria-label="Open gallery photo 9"><img src="assets/images/gallery-07.jpg" alt="Poolside loungers at Villa Martins" loading="lazy"></button>
+        <button class="gallery-item" type="button" data-lightbox="assets/images/gallery-09.jpg" aria-label="Open gallery photo 10"><img src="assets/images/gallery-09.jpg" alt="Villa Martins island stay" loading="lazy"></button>
+        <button class="gallery-item" type="button" data-lightbox="assets/images/gallery-10.jpg" aria-label="Open gallery photo 11"><img src="assets/images/gallery-10.jpg" alt="Villa Martins property detail" loading="lazy"></button>
+        <button class="gallery-item gallery-item--wide" type="button" data-lightbox="assets/images/gallery-12.jpg" aria-label="Open gallery photo 12"><img src="assets/images/gallery-12.jpg" alt="Guest diving into the Villa Martins pool" loading="lazy"></button>
+        <button class="gallery-item" type="button" data-lightbox="assets/images/gallery-13.jpg" aria-label="Open gallery photo 13"><img src="assets/images/gallery-13.jpg" alt="Villa Martins gallery photograph" loading="lazy"></button>
+        <button class="gallery-item gallery-item--tall" type="button" data-lightbox="assets/images/gallery-14.jpg" aria-label="Open gallery photo 14"><img src="assets/images/gallery-14.jpg" alt="Villa Martins gallery photograph" loading="lazy"></button>
+        <button class="gallery-item" type="button" data-lightbox="assets/images/gallery-15.jpg" aria-label="Open gallery photo 15"><img src="assets/images/gallery-15.jpg" alt="Villa Martins gallery photograph" loading="lazy"></button>
+        <button class="gallery-item gallery-item--wide" type="button" data-lightbox="assets/images/gallery-16.jpg" aria-label="Open gallery photo 16"><img src="assets/images/gallery-16.jpg" alt="Villa Martins gallery photograph" loading="lazy"></button>
+        <button class="gallery-item" type="button" data-lightbox="assets/images/gallery-17.jpg" aria-label="Open gallery photo 17"><img src="assets/images/gallery-17.jpg" alt="Villa Martins gallery photograph" loading="lazy"></button>
+        <button class="gallery-item gallery-item--tall" type="button" data-lightbox="assets/images/gallery-18.jpg" aria-label="Open gallery photo 18"><img src="assets/images/gallery-18.jpg" alt="Villa Martins gallery photograph" loading="lazy"></button>
+        <button class="gallery-item" type="button" data-lightbox="assets/images/gallery-19.jpg" aria-label="Open gallery photo 19"><img src="assets/images/gallery-19.jpg" alt="Villa Martins gallery photograph" loading="lazy"></button>
+        <button class="gallery-item gallery-item--tall" type="button" data-lightbox="assets/images/gallery-20.jpg" aria-label="Open gallery photo 20"><img src="assets/images/gallery-20.jpg" alt="Villa Martins gallery photograph" loading="lazy"></button>
+        <button class="gallery-item" type="button" data-lightbox="assets/images/gallery-21.jpg" aria-label="Open gallery photo 21"><img src="assets/images/gallery-21.jpg" alt="Villa Martins gallery photograph" loading="lazy"></button>
+        <button class="gallery-item gallery-item--wide" type="button" data-lightbox="assets/images/gallery-22.jpg" aria-label="Open gallery photo 22"><img src="assets/images/gallery-22.jpg" alt="Villa Martins gallery photograph" loading="lazy"></button>
+        <button class="gallery-item" type="button" data-lightbox="assets/images/gallery-23.jpg" aria-label="Open gallery photo 23"><img src="assets/images/gallery-23.jpg" alt="Villa Martins gallery photograph" loading="lazy"></button>
+        <button class="gallery-item" type="button" data-lightbox="assets/images/gallery-24.jpg" aria-label="Open gallery photo 24"><img src="assets/images/gallery-24.jpg" alt="Villa Martins gallery photograph" loading="lazy"></button>
+        <button class="gallery-item gallery-item--wide" type="button" data-lightbox="assets/images/gallery-25.jpg" aria-label="Open gallery photo 25"><img src="assets/images/gallery-25.jpg" alt="Villa Martins gallery photograph" loading="lazy"></button>
+        <button class="gallery-item" type="button" data-lightbox="assets/images/gallery-26.jpg" aria-label="Open gallery photo 26"><img src="assets/images/gallery-26.jpg" alt="Villa Martins gallery photograph" loading="lazy"></button>
+        <button class="gallery-item" type="button" data-lightbox="assets/images/gallery-27.jpg" aria-label="Open gallery photo 27"><img src="assets/images/gallery-27.jpg" alt="Villa Martins gallery photograph" loading="lazy"></button>
       </div>
+      <p class="gallery-count" data-i18n="galleryCount">Complete gallery · 27 photographs</p>
     </section>
 
     <section class="journey" id="journey">
       <div class="journey-photo" role="img" aria-label="Aerial coastal view of Inhaca Island"></div>
       <div class="journey-copy">
-        <p class="eyebrow">The journey is part of it</p>
-        <h2>Maputo to island calm in 60 minutes.</h2>
-        <p>Our speedboat transfer connects Maputo and Inhaca Island, turning your arrival into the first memorable part of the escape.</p>
+        <p class="eyebrow" data-i18n="journeyEyebrow">The journey is part of it</p>
+        <h2 data-i18n="journeyTitle">Maputo to island calm in 60 minutes.</h2>
+        <p data-i18n="journeyBody">Our speedboat transfer connects Maputo and Inhaca Island, turning your arrival into the first memorable part of the escape.</p>
         <ol class="route">
-          <li><span>01</span><strong>Meet in Maputo</strong><small>We confirm your departure details.</small></li>
-          <li><span>02</span><strong>Cross the bay</strong><small>A scenic 60-minute speedboat ride.</small></li>
-          <li><span>03</span><strong>Arrive on Inhaca</strong><small>Welcome to Villa Martins.</small></li>
+          <li><span>01</span><strong data-i18n="routeMeet">Meet in Maputo</strong><small data-i18n="routeMeetBody">We confirm your departure details.</small></li>
+          <li><span>02</span><strong data-i18n="routeCross">Cross the bay</strong><small data-i18n="routeCrossBody">A scenic 60-minute speedboat ride.</small></li>
+          <li><span>03</span><strong data-i18n="routeArrive">Arrive on Inhaca</strong><small data-i18n="routeArriveBody">Welcome to Villa Martins.</small></li>
         </ol>
-        <a class="text-link text-link--light" href="https://maps.google.com/?q=-26.056522,32.913395" target="_blank" rel="noopener">View on Google Maps</a>
+        <a class="text-link text-link--light" href="https://maps.google.com/?q=-26.056522,32.913395" target="_blank" rel="noopener" data-i18n="viewMap">View on Google Maps</a>
       </div>
     </section>
 
     <section class="booking-cta section">
-      <p class="eyebrow eyebrow--dark">Your island dates</p>
-      <h2>Ready when you are.</h2>
-      <p>Tell us when you would like to travel and what your perfect island stay looks like. Our team will confirm availability and tailor the details.</p>
-      <button class="button button--dark" type="button" data-open-booking>Start your reservation</button>
-      <span class="microcopy">No payment required · Request by WhatsApp or email</span>
+      <p class="eyebrow eyebrow--dark" data-i18n="ctaEyebrow">Your island dates</p>
+      <h2 data-i18n="ctaTitle">Ready when you are.</h2>
+      <p data-i18n="ctaBody">Tell us when you would like to travel and what your perfect island stay looks like. Our team will confirm availability and tailor the details.</p>
+      <button class="button button--dark" type="button" data-open-booking data-i18n="startReservation">Start your reservation</button>
+      <span class="microcopy" data-i18n="noPayment">No payment required · Request by WhatsApp or email</span>
     </section>
   </main>
 
@@ -183,12 +219,12 @@
       <p>Inhaca Island, Mozambique</p>
     </div>
     <div>
-      <p class="footer-label">Reservations</p>
+      <p class="footer-label" data-i18n="reservations">Reservations</p>
       <a href="https://wa.me/258856774327" target="_blank" rel="noopener">+258 85 677 4327</a>
       <a href="mailto:res@villamartins.net">res@villamartins.net</a>
     </div>
     <div>
-      <p class="footer-label">Follow</p>
+      <p class="footer-label" data-i18n="follow">Follow</p>
       <a href="https://www.instagram.com/villa_martins_inhaca/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.facebook.com/vilamartinsinhaca" target="_blank" rel="noopener">Facebook</a>
     </div>
@@ -198,31 +234,31 @@
   <dialog class="booking-dialog" id="booking-dialog" aria-labelledby="booking-title">
     <button class="dialog-close" type="button" data-close-booking aria-label="Close booking form">×</button>
     <div class="dialog-intro">
-      <p class="eyebrow eyebrow--dark">Reservation request</p>
-      <h2 id="booking-title">Let’s plan your island stay.</h2>
-      <p>Share a few details and choose how to send your request. The Villa Martins team will reply with availability and a tailored quotation.</p>
+      <p class="eyebrow eyebrow--dark" data-i18n="bookingEyebrow">Reservation request</p>
+      <h2 id="booking-title" data-i18n="bookingTitle">Let’s plan your island stay.</h2>
+      <p data-i18n="bookingBody">Share a few details and choose how to send your request. The Villa Martins team will reply with availability and a tailored quotation.</p>
     </div>
     <form id="booking-form">
       <div class="form-grid">
-        <label class="field field--full">Name and surname<input name="name" autocomplete="name" required></label>
-        <label class="field">Arrival<input name="arrival" type="date" required></label>
-        <label class="field">Departure<input name="departure" type="date" required></label>
-        <label class="field">Adults<select name="adults" required><option value="1">1 adult</option><option value="2" selected>2 adults</option><option value="3">3 adults</option><option value="4">4 adults</option><option value="5">5 adults</option><option value="6">6+ adults</option></select></label>
-        <label class="field">Children (4–12)<select name="children"><option value="0" selected>None</option><option value="1">1 child</option><option value="2">2 children</option><option value="3">3 children</option><option value="4">4+ children</option></select></label>
+        <label class="field field--full"><span data-i18n="name">Name and surname</span><input name="name" autocomplete="name" required></label>
+        <label class="field"><span data-i18n="arrival">Arrival</span><input name="arrival" type="date" required></label>
+        <label class="field"><span data-i18n="departure">Departure</span><input name="departure" type="date" required></label>
+        <label class="field"><span data-i18n="adults">Adults</span><select name="adults" required><option value="1">1 adult</option><option value="2" selected>2 adults</option><option value="3">3 adults</option><option value="4">4 adults</option><option value="5">5 adults</option><option value="6">6+ adults</option></select></label>
+        <label class="field"><span data-i18n="children">Children (4–12)</span><select name="children"><option value="0" selected>None</option><option value="1">1 child</option><option value="2">2 children</option><option value="3">3 children</option><option value="4">4+ children</option></select></label>
       </div>
       <fieldset>
-        <legend>Add to your stay</legend>
-        <label class="check"><input type="checkbox" name="extras" value="Return boat transfer"><span>Return boat transfer</span></label>
-        <label class="check"><input type="checkbox" name="extras" value="Snorkelling"><span>Snorkelling</span></label>
-        <label class="check"><input type="checkbox" name="extras" value="Island tour"><span>Island tour</span></label>
-        <label class="check"><input type="checkbox" name="extras" value="Fishing"><span>Fishing</span></label>
+        <legend data-i18n="addStay">Add to your stay</legend>
+        <label class="check"><input type="checkbox" name="extras" value="Return boat transfer"><span data-i18n="boatTransfer">Return boat transfer</span></label>
+        <label class="check"><input type="checkbox" name="extras" value="Snorkelling"><span data-i18n="snorkelling">Snorkelling</span></label>
+        <label class="check"><input type="checkbox" name="extras" value="Island tour"><span data-i18n="islandTour">Island tour</span></label>
+        <label class="check"><input type="checkbox" name="extras" value="Fishing"><span data-i18n="fishingShort">Fishing</span></label>
       </fieldset>
-      <label class="field field--full">Anything else?<textarea name="message" rows="3" placeholder="Celebration, dietary needs, room preference…"></textarea></label>
+      <label class="field field--full"><span data-i18n="anythingElse">Anything else?</span><textarea name="message" rows="3" placeholder="Celebration, dietary needs, room preference…" data-i18n-placeholder="messagePlaceholder"></textarea></label>
       <p class="form-error" id="form-error" role="alert"></p>
-      <div class="booking-summary" id="booking-summary" aria-live="polite">Choose your dates to see your stay summary.</div>
+      <div class="booking-summary" id="booking-summary" aria-live="polite" data-i18n="summaryPrompt">Choose your dates to see your stay summary.</div>
       <div class="form-actions">
-        <button class="button button--whatsapp" type="submit">Send via WhatsApp</button>
-        <button class="button button--email" type="button" id="send-email">Send by email</button>
+        <button class="button button--whatsapp" type="submit" data-i18n="sendWhatsApp">Send via WhatsApp</button>
+        <button class="button button--email" type="button" id="send-email" data-i18n="sendEmail">Send by email</button>
       </div>
     </form>
   </dialog>
@@ -232,6 +268,7 @@
     <img src="" alt="Villa Martins gallery photograph">
   </dialog>
 
+  <script src="translations.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

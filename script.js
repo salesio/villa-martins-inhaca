@@ -6,6 +6,11 @@ const menuButton = document.querySelector('.menu-toggle');
 const nav = document.querySelector('#main-nav');
 const lightbox = document.querySelector('#lightbox');
 const lightboxImage = lightbox.querySelector('img');
+const languageSelect = document.querySelector('#language-select');
+const translations = window.VM_TRANSLATIONS;
+const localeMap = { en: 'en', pt: 'pt-PT', fr: 'fr', af: 'af', nl: 'nl', da: 'da', gd: 'gd', zh: 'zh-CN' };
+let activeLanguage = localStorage.getItem('villaMartinsLanguage') || 'en';
+if (!translations[activeLanguage]) activeLanguage = 'en';
 
 const today = new Date();
 const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
@@ -14,7 +19,35 @@ const departure = bookingForm.elements.departure;
 arrival.min = localToday;
 departure.min = localToday;
 
-const formatDate = value => value ? new Intl.DateTimeFormat('en', { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(`${value}T12:00:00`)) : '';
+const formatDate = value => value ? new Intl.DateTimeFormat(localeMap[activeLanguage], { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(`${value}T12:00:00`)) : '';
+
+function applyLanguage(code) {
+  activeLanguage = translations[code] ? code : 'en';
+  const t = translations[activeLanguage];
+  document.documentElement.lang = activeLanguage === 'zh' ? 'zh-CN' : activeLanguage;
+  languageSelect.value = activeLanguage;
+  document.querySelectorAll('[data-i18n]').forEach(element => {
+    if (t[element.dataset.i18n]) element.textContent = t[element.dataset.i18n];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(element => {
+    if (t[element.dataset.i18nHtml]) element.innerHTML = t[element.dataset.i18nHtml];
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+    if (t[element.dataset.i18nPlaceholder]) element.placeholder = t[element.dataset.i18nPlaceholder];
+  });
+  const adultOptions = bookingForm.elements.adults.options;
+  [...adultOptions].forEach((option, index) => {
+    const value = option.value;
+    option.textContent = value === '1' ? `1 ${t.adultWord}` : `${value}${index === adultOptions.length - 1 ? '+' : ''} ${t.adultsWord}`;
+  });
+  [...bookingForm.elements.children.options].forEach(option => {
+    const value = option.value;
+    option.textContent = value === '0' ? '—' : value === '1' ? `1 ${t.childWord}` : `${value}${value === '4' ? '+' : ''} ${t.childrenWord}`;
+  });
+  document.title = `Villa Martins · ${t.location}`;
+  try { localStorage.setItem('villaMartinsLanguage', activeLanguage); } catch (_) {}
+  updateSummary();
+}
 
 function nightsBetween() {
   if (!arrival.value || !departure.value) return 0;
@@ -22,32 +55,34 @@ function nightsBetween() {
 }
 
 function updateSummary() {
+  const t = translations[activeLanguage];
   if (arrival.value) departure.min = arrival.value;
   const nights = nightsBetween();
   formError.classList.remove('is-visible');
   if (!arrival.value || !departure.value) {
-    summary.textContent = 'Choose your dates to see your stay summary.';
+    summary.textContent = t.summaryPrompt;
     return;
   }
   if (nights < 1) {
-    summary.textContent = 'Your departure must be after your arrival.';
+    summary.textContent = t.errorDate;
     return;
   }
   const adults = bookingForm.elements.adults.value;
   const children = bookingForm.elements.children.value;
-  summary.innerHTML = `<strong>${nights} night${nights === 1 ? '' : 's'}</strong> · ${formatDate(arrival.value)} to ${formatDate(departure.value)} · ${adults} adult${adults === '1' ? '' : 's'}${children === '0' ? '' : ` · ${children} child${children === '1' ? '' : 'ren'}`}`;
+  summary.innerHTML = `<strong>${nights} ${nights === 1 ? t.night : t.nights}</strong> · ${formatDate(arrival.value)} — ${formatDate(departure.value)} · ${adults} ${adults === '1' ? t.adultWord : t.adultsWord}${children === '0' ? '' : ` · ${children} ${children === '1' ? t.childWord : t.childrenWord}`}`;
 }
 
 function requestText() {
+  const t = translations[activeLanguage];
   const data = new FormData(bookingForm);
   const extras = data.getAll('extras');
   return [
     'Hello Villa Martins, I would like to request availability:',
     '',
-    `Name: ${data.get('name')}`,
-    `Arrival: ${formatDate(data.get('arrival'))}`,
-    `Departure: ${formatDate(data.get('departure'))}`,
-    `Guests: ${data.get('adults')} adult(s), ${data.get('children')} child(ren) aged 4–12`,
+    `${t.name}: ${data.get('name')}`,
+    `${t.arrival}: ${formatDate(data.get('arrival'))}`,
+    `${t.departure}: ${formatDate(data.get('departure'))}`,
+    `${t.adults}: ${data.get('adults')} · ${t.children}: ${data.get('children')}`,
     `Experiences / transfer: ${extras.length ? extras.join(', ') : 'Not selected yet'}`,
     `Notes: ${data.get('message') || 'None'}`,
     '',
@@ -59,7 +94,7 @@ function validRequest() {
   formError.classList.remove('is-visible');
   if (!bookingForm.reportValidity()) return false;
   if (nightsBetween() < 1) {
-    formError.textContent = 'Please choose a departure date after your arrival.';
+    formError.textContent = translations[activeLanguage].errorDate;
     formError.classList.add('is-visible');
     departure.focus();
     return false;
@@ -119,3 +154,5 @@ const observer = new IntersectionObserver(entries => entries.forEach(entry => {
 document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
 
 document.querySelector('#year').textContent = new Date().getFullYear();
+languageSelect.addEventListener('change', event => applyLanguage(event.target.value));
+applyLanguage(activeLanguage);
